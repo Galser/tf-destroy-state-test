@@ -8,10 +8,10 @@ In one of the discussion that broke outside of work, person noted that `terrafor
 
 # Test 
 
-- Created simply Terraform code 
+- Created simple Terraform code 
 
 
-```
+```terraform
 resource "random_string" "random" {
   length = 8
   special = true
@@ -30,7 +30,7 @@ output "random" {
 
 - `terraform init`
 
-```
+```bash
 Initializing the backend...
 
 Initializing provider plugins...
@@ -49,7 +49,7 @@ Terraform has been successfully initialized!
 
 - `terraform apply`
 
-```
+```bash
 terraform apply --auto-approve
 
 Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
@@ -93,7 +93,7 @@ random = "oKP9@4�g"
 
 -- State file contesnts currently is : 
 
-```
+```json
 {
   "version": 4,
   "terraform_version": "1.4.6",
@@ -143,7 +143,7 @@ random = "oKP9@4�g"
 
 -- Perfoming destroy :
 
-```
+```bash
 terraform destroy --auto-approve
 random_string.random: Refreshing state... [id=oKP9@4�g]
 
@@ -184,7 +184,7 @@ Destroy complete! Resources: 1 destroyed.
 
 - State file contents after destroy : 
 
-```
+```json
 {
   "version": 4,
   "terraform_version": "1.4.6",
